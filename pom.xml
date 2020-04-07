@@ -41,10 +41,10 @@
 			<optional>true</optional>
 		</dependency>
 		
-		<dependency>
+		<!-- <dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-thymeleaf</artifactId>
-		</dependency>
+		</dependency> -->
 		
 		<!-- 마이바티스 -->
 		<dependency>
