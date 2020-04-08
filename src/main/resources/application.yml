@@ -1,5 +1,5 @@
 mybatis:
-  type-aliases-package: com.sbs.starter.dto
+  type-aliases-package: com.lost.site.dto
 server:
   port: 8083
 spring:
