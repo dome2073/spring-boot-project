@@ -33,6 +33,11 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 		
+		<dependency>
+	        <groupId>org.springframework.boot</groupId>
+	        <artifactId>spring-boot-starter-tomcat</artifactId>
+		</dependency>
+		
 		<!-- DEV TOOLS, -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -127,6 +132,19 @@
 			<artifactId>spring-context-support</artifactId>
 		</dependency>
 		
+		<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
+	<dependency>
+    	<groupId>com.fasterxml.jackson.core</groupId>
+    	<artifactId>jackson-databind</artifactId>
+    	<version>2.6.0</version>
+	</dependency>
+		
+	<dependency>
+        <groupId>com.googlecode.json-simple</groupId>
+        <artifactId>json-simple</artifactId>
+        <version>1.1</version>
+     </dependency>
+
 	</dependencies>
 
 	<build>

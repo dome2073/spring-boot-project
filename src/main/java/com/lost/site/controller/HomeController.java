@@ -7,9 +7,15 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class HomeController {
 	
-	@RequestMapping("/home/main")
-	@ResponseBody
+	@RequestMapping("/")
 	public String showMain() {
-		return "메인화면";
+		
+		return "home/main";
+	}
+	
+	@RequestMapping("/home/login")
+	public String showLogin() {
+		
+		return "home/login";
 	}
 }
