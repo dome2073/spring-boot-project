@@ -64,7 +64,7 @@
 				<div class="row">
 					<div class="col-md-12">
 						<div class="cta-block">
-							<form class="con common-form" action="/user/join" method="post" onsubmit="submitJoinForm(this); return false;">
+							<form class="con common-form" action="/user/dojoin" method="post" onsubmit="submitJoinForm(this); return false;">
 								<label for="id">아이디</label><input type="text" id="id" name="user_id"><br/>
 								<label for="pw">비밀번호 </label> <input type="password" id="pw" name="user_pw"><br/>
 								<label for="pw_Confirm">비밀번호확인 </label> <input type="password" id="pw_Confirm" name="pw_Confirm"><br/>

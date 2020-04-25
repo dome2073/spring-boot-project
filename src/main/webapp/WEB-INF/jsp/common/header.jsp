@@ -17,8 +17,35 @@
             </div>
             <div class="top-right">
                   <ul class="social-links">
+                  	<c:if test="${loginedUser != null }">
+						
                         <li>
-                              <a href="<c:url value="/home/login" />">
+                              <a href="<c:url value="/user/doLogout" />">
+                                    	로그아웃
+                              </a>
+                        </li>
+                        <li>
+                              <a href="<c:url value="/user/mypage" />">
+                                   		 마이페이지
+                              </a>
+                        </li>
+                        <li>
+                              <a href="#">
+                                    1:1문의
+                              </a>
+                        </li>
+                        <li>
+                              <a href="#">
+                                   	사이트맵
+                              </a>
+                        </li>
+					
+					
+					</c:if>
+                    <c:if test="${loginedUser == null }">
+                    
+                    	<li>
+                              <a href="<c:url value="/user/login" />">
                                     	로그인
                               </a>
                         </li>
@@ -37,7 +64,7 @@
                                    	사이트맵
                               </a>
                         </li>
-                        
+                    </c:if>
                   </ul>
             </div>
       </div>

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,6 +9,23 @@
 <title>분통 로그인페이지</title>
 
 <jsp:include page="/WEB-INF/jsp/common/common1.jsp"></jsp:include>
+<script>
+	function submitLoginForm(form) {
+		form.user_id.value = form.user_id.value.trim();
+		if (form.user_id.value.length == 0) {
+			alert('로그인ID를 입력해주세요.');
+			form.user_id.focus();
+			return false;
+		}
+		form.user_pw.value = form.user_pw.value.trim();
+		if (form.user_pw.value.length == 0) {
+			alert('로그인PW를 입력해주세요.');
+			form.user_pw.focus();
+			return false;
+		}
+		form.submit();
+	}
+</script>
 </head>
 <body>
 
@@ -33,14 +51,10 @@
 				<div class="row">
 					<div class="col-md-12">
 						<div class="cta-block">
-							<form action="user/reg">
+							<form class= "con common-form" action="/user/doLogin" method="post" onsubmit="submitLoginForm(this); return false;" >
 								<label for="id">아이디</label><input type="text" id="id" name="user_id"><br/>
-								<label for="pw">비밀번호 </label> <input type="text" id="pw" name="user_pw"><br/>
-								<label for="email">이메일</label>  <input type="text" id="email" name="user_email"><br/>
-								<label for="name">이름</label>  <input type="text" id="name" name="user_name"><br/>
-								<label for="nikname">닉네임</label>  <input type="text" id="nikname" name="user_nikname"><br/>
-								<label for="phone">전화번호</label>  <input type="text" id="phone" name="user_phone"><br/>
-								<label for="address">주소</label>  <input type="text" id="address" name="user_address"><br/>
+								<label for="pw">비밀번호 </label> <input type="password" id="pw" name="user_pw"><br/>
+								<input type="submit" value="로그인"> <input type="reset"value="취소" onclick="history.back();">
 								
 							</form>
 						
