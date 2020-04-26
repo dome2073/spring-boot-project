@@ -17,8 +17,8 @@
             </div>
             <div class="top-right">
                   <ul class="social-links">
-                  	<c:if test="${loginedUser != null }">
-						
+                  	<c:if test="${loginedUser!= null}">
+						 <a href="<c:url value="/user/doLogout"/>"></a>
                         <li>
                               <a href="<c:url value="/user/doLogout" />">
                                     	로그아웃
@@ -42,15 +42,16 @@
 					
 					
 					</c:if>
-                    <c:if test="${loginedUser == null }">
+					
+                    <c:if test="${loginedUser ==null }">
                     
                     	<li>
-                              <a href="<c:url value="/user/login" />">
+                              <a href="<c:url value="/user/Login" />">
                                     	로그인
                               </a>
                         </li>
                         <li>
-                              <a href="<c:url value="/user/join" />">
+                              <a href="<c:url value="/user/Join" />">
                                    		 회원가입
                               </a>
                         </li>
@@ -115,11 +116,11 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                   <ul class="nav navbar-nav" id="navbar-nav">
-                        <li style="margin-left: 150px; margin-right: 50px;"> <a href="<c:url value="article/find" />"> 습득물</a> </li>        
-                        <li style="margin-right: 50px;"> <a href="<c:url value="article/lost" />">분실물 </a></li>
+                        <li style="margin-left: 150px; margin-right: 50px;"> <a href="<c:url value="/article/find/list?atc_type=습득물 "/>"> 습득물</a> </li>        
+                        <li style="margin-right: 50px;"> <a href="<c:url value="/article/lost/list?atc_type=분실물" />">분실물 </a></li>
                         <li style="margin-right: 50px;"> <a href="#"> 습득물 & 분실물 지도 </a></li>               
                         <li style="margin-right: 50px;"> <a href="#"> 정보마당 </a></li>
-                        <li style="margin-right: 50px;"><a href="user/mypage">마이페이지 </a> </li>
+                        <li style="margin-right: 50px;"><a href="<c:url value="/user/mypage" />">마이페이지</a> </li>
                         <!-- <li class="dropdown">
                               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown
                                     <span class="caret"></span>

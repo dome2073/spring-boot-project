@@ -12,7 +12,7 @@
 	<select id="getOne" parameterType="long" resultType="User"> 
 		SELECT *
 		FROM user
-		WHERE user_num = #{user_id}
+		WHERE user_num = #{user_num}
 	</select>
 	
 	<select id="getMatchedOne" parameterType="String" resultType="User">
@@ -21,5 +21,18 @@
 		WHERE user_id = #{user_id}
 		AND user_pw = #{user_pw}
 	</select>
+	
+	<insert id="join" parameterType="map" useGeneratedKeys="true"
+		keyProperty="user_num">
+		INSERT INTO user
+		SET user_date = NOW(),
+		user_id = #{user_id},
+		user_pw = #{user_pw},
+		user_email = #{user_email},
+		user_name = #{user_name},
+		user_nikname = #{user_nikname},
+		user_phone = #{user_phone},
+		user_address = #{user_address}
+	</insert>
 	
 </mapper>

@@ -4,32 +4,20 @@
 
 <c:set var="pageName" value="main"/>
 
-
 <!DOCTYPE html>
 <html>
 
 <head>
   <meta charset="utf-8">
   <title>분통 - 분실물 통합사이트</title>
-	
+
   
   <!-- mobile responsive meta -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <!-- Slick Carousel -->
-  <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/plugins/slick/slick.css">
-  <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/plugins/slick/slick-theme.css">
-  <!-- FancyBox -->
-  <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/plugins/fancybox/jquery.fancybox.min.css">
-  
-  <!-- Stylesheets -->
-  <link href="${pageContext.request.contextPath}/resources/css/style.css" rel="stylesheet">
-  
-  <!--Favicon-->
-  <link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/images/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="${pageContext.request.contextPath}/resources/images/favicon.ico" type="image/x-icon">
-  
+
+  <jsp:include page="/WEB-INF/jsp/common/common1.jsp"></jsp:include>
   
 </head>
 
@@ -47,9 +35,7 @@
  <jsp:include page="/WEB-INF/jsp/common/header.jsp"></jsp:include>
 
 <!--header top-->
-<c:if test="${loginedUser != null }">
-	${loginedUser}
-</c:if>
+
 
 <!--=================================
 =            Page Slider            =
@@ -63,7 +49,7 @@
                 <div class="cta-block">
                     <div class="emmergency item">
                         <i class="fa fa-phone"></i>
-                        <h2>분실 휴대폰 찾기</h2>
+                        <h2>분실 휴대폰 찾기</h2>                      
                         <p> 분통에서는 분실신고가 접수된 휴대폰 정보와 휴대폰 찾기 서비스를 제공하고 있습니다</p>
                     </div>
                     <div class="top-doctor item">

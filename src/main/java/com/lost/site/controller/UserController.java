@@ -18,29 +18,41 @@ public class UserController {
 	@Autowired
 	UserService userService;
 	
-	@RequestMapping("/user/join")
+	@RequestMapping("/user/Join")
 	public String showJoin() {
 		
 		return "user/join";
 	}
 	
-	@RequestMapping("/user/dojoin")
+	@RequestMapping("/user/doJoin")
 	public String doJoin(@RequestParam Map<String, Object>param, Model model) {
 		
 		Map<String, Object> checkLoginResult = userService.checkLoginId((String)param.get("user_id"));
+		
 		if( ((String)checkLoginResult.get("resultCode")).startsWith("F-")){
 			model.addAttribute("alertMsg", checkLoginResult.get("msg"));
 			model.addAttribute("historyBack", true);
 			return "common/redirect";
 		}
 		
-		return "";
+		Map<String, Object> joinRs = userService.join(param);
+		
+		if (((String) joinRs.get("resultCode")).startsWith("F-")) {
+			model.addAttribute("alertMsg", joinRs.get("msg"));
+			model.addAttribute("historyBack", true);
+			return "common/redirect";
+		}
+
+		model.addAttribute("alertMsg", joinRs.get("msg"));
+		model.addAttribute("redirectUrl", "/");
+		
+		return "common/redirect";
 	}
 	
-	@RequestMapping("/user/login")
+	@RequestMapping("/user/Login")
 	public String showLogin() {
 		
-		return "home/login";
+		return "user/login";
 	}
 	
 	@RequestMapping("/user/doLogin")
@@ -54,7 +66,7 @@ public class UserController {
 			return "common/redirect";
 		}
 		
-		session.setAttribute("loginedUser", matchedUser);
+		session.setAttribute("loginedUserNum", matchedUser.getUser_num());
 			
 		model.addAttribute("alertMsg", "로그인 되었습니다.");
 		model.addAttribute("redirectUrl", "/");
@@ -64,11 +76,27 @@ public class UserController {
 	
 	
 	
-	@RequestMapping("/user/dologout")
-	public String doLogout(HttpSession session) {
+	@RequestMapping("/user/doLogout")
+	public String doLogout(HttpSession session,  Model model) {
 		
-		session.removeAttribute("loginedUserId");
+		session.removeAttribute("loginedUserNum");
+		session.removeAttribute("loginedUser");
+		session.removeAttribute("isLogined");
 		
-		return "/";
+		
+		
+		System.out.println("로그아웃");
+		
+		model.addAttribute("alertMsg", "로그아웃 되었습니다.");
+		model.addAttribute("redirectUrl", "/");
+		
+		return "common/redirect";
+	}
+	
+	@RequestMapping("/user/mypage")
+	public String showMypage(HttpSession session) {
+		
+		
+		return "user/mypage";
 	}
 }

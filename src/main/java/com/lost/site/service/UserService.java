@@ -11,7 +11,8 @@ public interface UserService {
 	User getOne(long loginedUserId);
 
 	User getMatchedOne(String user_id, String user_pw);
-	
+
+	Map<String, Object> join(Map<String, Object> param);
 	
 
 }

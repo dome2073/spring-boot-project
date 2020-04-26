@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.lost.site.dao.UserDao;
 import com.lost.site.dto.User;
+import com.lost.site.util.CUtil;
 
 import groovy.util.logging.Slf4j;
 
@@ -48,6 +49,35 @@ public class UserServiceImpl implements UserService{
 	
 	public User getMatchedOne(String user_id, String user_pw) {
 		return userDao.getMatchedOne(user_id, user_pw);
+	}
+
+	public Map<String, Object> join(Map<String, Object> param) {
+		// TODO Auto-generated method stub
+		
+		userDao.join(param);
+		
+		long newId = CUtil.getAsLong(param.get("user_num"));
+		
+		String resultCode = "";
+		String msg = "";
+		
+		if ( newId == 0 ) {
+			resultCode = "F-1";
+			msg = "회원가입에 실패했습니다.";
+		}
+		else {
+			resultCode = "S-1";
+			msg = "회원가입 되었습니다.";
+		}
+		
+		Map<String, Object> rs = new HashMap<String, Object>();
+		
+		rs.put("resultCode", resultCode);
+		rs.put("msg", msg);
+		rs.put("newId", newId);
+		
+		return rs;
+		
 	}
 	
 	

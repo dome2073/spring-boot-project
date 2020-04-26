@@ -2,7 +2,32 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.lost.site.dao.ArticleDao">
-	<select id="getList" parameterType="map" resultType="Article"> 
-		SELECT * FROM article
+	<select id="selectCount" parameterType="map" resultType="int"> 
+		SELECT COUNT(*) 
+		FROM article
+		WHERE atc_type= #{atc_type}
+		
 	</select>
+	
+	<select id="selectList" parameterType="map" resultType="Article"> 
+		SELECT *
+		FROM article
+		WHERE atc_type= #{atc_type}
+		LIMIT #{firstRow}, #{messageCountPerPage}
+		
+	</select>
+	
+	
+	<select id="getOne" parameterType="String" resultType="Article">
+		SELECT *
+		FROM article
+		WHERE atc_num = #{atc_num}
+	</select>
+	
+	<update id="hitUp" parameterType="String">
+		UPDATE article
+		SET atc_hit = atc_hit + 1
+		WHERE atc_num = #{atc_num}
+	</update>
+	
 </mapper>
