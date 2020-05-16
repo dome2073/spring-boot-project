@@ -2,6 +2,7 @@ package com.lost.site.service;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -79,6 +80,13 @@ public class ArticleServiceImpl implements ArticleService {
 	public void hitUp(String atc_num) {
 		articleDao.hitUp(atc_num);
 		
+	}
+
+
+	@Override
+	public List<String> getPlaceList() {
+		// TODO Auto-generated method stub
+		return articleDao.getPlaceList();
 	}
 	
 	

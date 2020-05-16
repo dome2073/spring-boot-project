@@ -1,6 +1,7 @@
 package com.lost.site.service;
 
 import java.util.List;
+import java.util.Map;
 
 import com.lost.site.dto.Article;
 import com.lost.site.dto.ArticleList;
@@ -13,4 +14,6 @@ public interface ArticleService {
 	public Article getOne(String atc_num);
 
 	public void hitUp(String atc_num);
+
+	public List<String> getPlaceList();
 }

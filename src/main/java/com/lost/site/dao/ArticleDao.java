@@ -1,6 +1,7 @@
 package com.lost.site.dao;
 
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.annotations.Mapper;
 
@@ -19,4 +20,6 @@ public interface ArticleDao {
 	public int selectCount(String atc_type);
 
 	public List<Article> selectList(String atc_type,int firstRow, int messageCountPerPage);
+
+	public List<String> getPlaceList();
 }

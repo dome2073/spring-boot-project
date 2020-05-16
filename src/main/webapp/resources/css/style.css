@@ -3636,4 +3636,18 @@ li {
 .type01 thead tr th{
 	text-align: center;
 }
+.type01 thead tr th {
+	text-align: center;
+}
+.qnb5_l label, .qnb5_r label{
+ width: 70px;
+ margin-top: 5px;
+}
+.qnb5_l input[type="text"], .qnb5_r input[type="text"], .qnb5_l select{
+ width: 240px;
+ height: 24px;;
+}
+.qnb5_l .hasDatepicker{
+	width:80px;
+}
 

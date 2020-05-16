@@ -16,8 +16,7 @@
 		LIMIT #{firstRow}, #{messageCountPerPage}
 		
 	</select>
-	
-	
+
 	<select id="getOne" parameterType="String" resultType="Article">
 		SELECT *
 		FROM article
@@ -29,5 +28,11 @@
 		SET atc_hit = atc_hit + 1
 		WHERE atc_num = #{atc_num}
 	</update>
+	
+	<select id="getPlaceList" resultType="String"> 
+		SELECT kp_id
+		FROM article
+
+	</select>
 	
 </mapper>

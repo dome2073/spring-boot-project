@@ -9,7 +9,7 @@
 <body>
 <!--footer-main-->
 <footer class="footer-main">
-  <div class="footer-top">
+  <!-- <div class="footer-top">
     <div class="container">
       <div class="row">
         <div class="col-md-4 col-sm-6 col-xs-12">
@@ -109,24 +109,15 @@
       </div>
     </div>
   </div>
-  <div class="footer-bottom">
+  -->
+  <div class="footer-top">
     <div class="container clearfix">
       <div class="copyright-text">
-        <p>&copy; Copyright 2018. All Rights Reserved by
-          <a href="index.html">Medic</a>
+        <p>&copy; Copyright 
+          
         </p>
       </div>
-      <ul class="footer-bottom-link">
-        <li>
-          <a href="index.html">Home</a>
-        </li>
-        <li>
-          <a href="about.html">About</a>
-        </li>
-        <li>
-          <a href="contact.html">Contact</a>
-        </li>
-      </ul>
+      
     </div>
   </div>
 </footer>
